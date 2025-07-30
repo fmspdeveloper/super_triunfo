@@ -376,9 +376,10 @@ int main()
         jogo();
         break;
     case 2:
-        printf("Regras 1\n");
-        printf("Regras 2\n");
-        printf("Regras 3\n");
+        printf("Você deve preencher corretamente os dados para ambas as cidades\n");
+        printf("Após o preenchimento, escolha um critério de comparação\n");
+        printf("O jogo informará a cidade vencedora com base no critério selecionado\n");
+        printf("Em caso de empate, será informado\n");
         break;
     case 3:
         printf("Você saiu do jogo");
