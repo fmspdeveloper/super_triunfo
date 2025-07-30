@@ -16,6 +16,7 @@ void jogo()
     float resultadopibPerCapita1;
     float superPoder1;
 
+    // dados cartas 1
     printf("\nCarta 1:\n");
 
     printf("Digite o estado: ");
@@ -93,6 +94,8 @@ void jogo()
     printf("4. Pib\n");
     printf("5. Pontos Turisticos\n");
     printf("6. Densidade Demografica\n");
+    printf("7. População e Área\n");
+    printf("8. Pib e Pontos turisticos\n");
     printf("Opção: ");
     scanf("%d", &opcaoAtributo);
 
@@ -217,6 +220,139 @@ void jogo()
         {
             printf("Empate!\n");
         }
+        break;
+    case 7:
+        // comparacao de população
+        printf("\n--- Comparando população e área---\n");
+
+        int vitorias_c1 = 0, vitorias_c2 = 0;
+        float soma_c1 = 0, soma_c2 = 0;
+
+        if (populacao1 > populacao2)
+        {
+            printf("Vencedor população: %s\n", nome_cidade1);
+            soma_c1++;
+        }
+        else if (populacao2 > populacao1)
+        {
+            printf("Vencedor população: %s\n", nome_cidade2);
+            soma_c2++;
+        }
+        else
+        {
+            printf("Empate em população");
+        }
+        soma_c1 += populacao1;
+        soma_c2 += populacao2;
+
+        // comparação de area
+
+        printf("\nÁrea\n");
+        printf("%s: %.2f km²\n", nome_cidade1, area1);
+        printf("%s: %.2f km²\n", nome_cidade2, area2);
+
+        if (area1 > area2)
+        {
+            printf("Vencedor em area: %.2f\n", nome_cidade1);
+            vitorias_c1++;
+        }
+        else if (area2 > area1)
+        {
+            printf("Vencedor em area: %.2f\n", nome_cidade2);
+            vitorias_c2++;
+        }
+        else
+        {
+            printf("Empate em area");
+        }
+
+        soma_c1 += area1;
+        soma_c2 += area2;
+
+        // resultado final
+
+        printf("\n--- Resultado final ---\n ");
+        printf("Vitorias %s: %d\n", nome_cidade1, vitorias_c1);
+        printf("Vitorias %s: %d\n", nome_cidade2, vitorias_c2);
+        printf("Soma %s: %.2f\n", nome_cidade1, soma_c1);
+        printf("Soma %s: %.2f\n", nome_cidade2, soma_c2);
+
+        if (soma_c1 > soma_c2)
+        {
+            printf("\nVencedor geral: %s\n", nome_cidade1);
+        }
+        else if (soma_c2 > soma_c1)
+        {
+            printf("\nVencedor geral: %s\n", nome_cidade1);
+        }
+        else
+        {
+            printf("Empate geral!\n");
+        }
+
+        break;
+    case 8:
+
+        // COMPARANDO PIB
+        printf("\n--- Comparando Pib e pontos turisticos---\n");
+
+
+        if (pib1 > pib2)
+        {
+            printf("Vencedor Pib: %.2f\n", nome_cidade1);
+            soma_c1++;
+        }
+        else if (pib2 > pib1)
+        {
+            printf("Vencedor Pib: %.2f\n", nome_cidade2);
+            soma_c2++;
+        }
+        else
+        {
+            printf("Empate em Pib");
+        }
+        soma_c1 += pib1;
+        soma_c2 += pib2;
+
+        // COMPARANDO PONTOS TURISTICOS
+        if (pontos_turisticos1 > pontos_turisticos2)
+        {
+            printf("Vencedor Pontos turisticos: %d", nome_cidade1);
+        }
+        else if (pontos_turisticos2 > pontos_turisticos1)
+        {
+            printf("Vencedor pontos turisticos: %d", nome_cidade2);
+            soma_c1++;
+        }
+        else
+        {
+            printf("Empate Pontos turisticos");
+            soma_c2++;
+        }
+
+        soma_c1 += pontos_turisticos1;
+        soma_c2 += pontos_turisticos2;
+
+        // Resultado final
+        printf("\n--- Resultado Final ---\n");
+        printf("Vitórias %s: %d\n", nome_cidade1, vitorias_c1);
+        printf("Vitórias %s: %d\n", nome_cidade2, vitorias_c2);
+        printf("Soma %s: %.2f\n", nome_cidade1, soma_c1);
+        printf("Soma %s: %.2f\n", nome_cidade2, soma_c2);
+
+        if (soma_c1 > soma_c2)
+        {
+            printf("\nVencedor geral: %s\n", nome_cidade1);
+        }
+        else if (soma_c2 > soma_c1)
+        {
+            printf("\nVencedor geral: %s\n", nome_cidade1);
+        }
+        else
+        {
+            printf("Empate geral!\n");
+        }
+
         break;
     default:
         printf("Opcao Invalida\n");
